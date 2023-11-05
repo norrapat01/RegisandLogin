@@ -1,4 +1,4 @@
-package hom.login.RegisandLogin;
+package freelance.service.freelanceservice.RegisandLogin;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
-
+import freelance.service.freelanceservice.Account;
+import freelance.service.freelanceservice.AccountDTO;
 
 @RestController
 @CrossOrigin
