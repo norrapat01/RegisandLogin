@@ -50,7 +50,7 @@ public class HistoryController {
     }
 
 
-    @GetMapping("/freelance/{name}")
+    @GetMapping("/{name}")
     public List<HistoryFreelance> getHistoryFromName(@PathVariable String name) {
         // Assuming you have a field named 'name' in your HistoryFreelance entity
         return historyRepositoryFreelance.findByName(name);
