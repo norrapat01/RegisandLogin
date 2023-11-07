@@ -39,27 +39,22 @@ public class HistoryController {
     public HistoryEnterprise addHistory_Enterprise(@RequestBody HistoryEnterprise history){
         return historyRepository.save(history);
     }
-
-
-
-
-
-
-
     /**Freelance */
     @GetMapping("/freelance")
     public List<HistoryFreelance> getAllHistory_freelance(){
         return historyRepositoryFreelance.findAll();
     }
-    
-
       @PostMapping("/freelance")
     public HistoryFreelance addHistory_Freelance(@RequestBody HistoryFreelance history){
         return historyRepositoryFreelance.save(history);
     }
 
 
-
+    @GetMapping("/freelance/{name}")
+    public List<HistoryFreelance> getHistoryFromName(@PathVariable String name) {
+        // Assuming you have a field named 'name' in your HistoryFreelance entity
+        return historyRepositoryFreelance.findByName(name);
+    }
 // @GetMapping("/accountid/{id}")
 // public List<HistoryEntity> findByAccount(@PathVariable Long id) {
 //     // Retrieve the Account object based on the 'id' parameter, or use a service to do this

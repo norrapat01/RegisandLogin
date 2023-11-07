@@ -40,6 +40,9 @@ public class AccountController {
         if (accountRepository.existsByAccountname(accountDTO.getAccountname())) {
             return ResponseEntity.badRequest().body("Account name is already in use.");
         }
+        if (accountRepository.existsByAccountname(accountDTO.getNumberCard())) {
+            return ResponseEntity.badRequest().body("Account name is already in use.");
+        }
 
         String id = accountService.addAccount(accountDTO);
         return ResponseEntity.ok(id);
