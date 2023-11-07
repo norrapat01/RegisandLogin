@@ -26,7 +26,6 @@ public class HistoryEntity {
     @JoinColumn(name =  "workFreelance_id", referencedColumnName = "id")
     private Freelance freelancer ;
 
-    private String name;
    
     public HistoryEntity() {
     }
@@ -59,14 +58,6 @@ public class HistoryEntity {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
   

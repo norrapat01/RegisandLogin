@@ -8,5 +8,5 @@ import java.util.List;
 public interface HistoryRepositoryEnterprise extends JpaRepository<HistoryEnterprise,Long>{
         List<HistoryEnterprise> findByid(Long id);
         // List<HistoryEntity> findByAccount(Long accountid);
-        List<HistoryFreelance> findByName(String name);
+
 }
