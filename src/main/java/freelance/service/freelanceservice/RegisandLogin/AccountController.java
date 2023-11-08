@@ -32,17 +32,17 @@ public class AccountController {
     private AccountRepository accountRepository;
 
 
-     @GetMapping("/search")
-    public ResponseEntity<String> searchAccountByEmail(@RequestParam("email") String email) {
-        Account account = accountRepository.findByEmail(email);
+   @GetMapping("/search")
+public ResponseEntity<String> searchAccountByEmail(@RequestParam("email") String email) {
+    Account account = accountRepository.findByEmail(email);
 
-        if (account != null) {
-            String password = account.getPassword(); // หากต้องการส่งรหัสกลับ
-            return ResponseEntity.ok(password);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+    if (account != null) {
+        String password = account.getPassword();
+        return ResponseEntity.ok(password);
+    } else {
+        return ResponseEntity.ok("Email does not exist");
     }
+}
     
     @PostMapping("/save")
     public ResponseEntity<String> saveAccount(@RequestBody AccountDTO accountDTO) {
